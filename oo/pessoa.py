@@ -1,6 +1,7 @@
 # Classes devem começar com letra maiusculo ex ExemploPessoa:
 
 class Pessoa:
+    olhos = 2
     def __init__(self, *filhos, nome=None, idade=35):
         self.nome = nome
         self.idade = idade
@@ -20,6 +21,14 @@ if __name__ == '__main__':
     for filho in wallace.filhos:
         print(filho.nome)
     wallace.sobrenome = 'Campos'
+    del wallace.filhos
     print(wallace.sobrenome)
     print(wallace.__dict__)
     print(dirce.__dict__)
+    #Pessoa.olhos = 3
+    wallace.olhos = 4
+    print(Pessoa.olhos)
+    print(wallace.olhos)
+    print(dirce.olhos)
+    print(id(Pessoa.olhos), id(wallace.olhos), id(dirce.olhos))
+
