@@ -19,3 +19,7 @@ if __name__ == '__main__':
     print(wallace.idade)
     for filho in wallace.filhos:
         print(filho.nome)
+    wallace.sobrenome = 'Campos'
+    print(wallace.sobrenome)
+    print(wallace.__dict__)
+    print(dirce.__dict__)
