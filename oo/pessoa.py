@@ -1,18 +1,21 @@
 # Classes devem começar com letra maiusculo ex ExemploPessoa:
 
 class Pessoa:
-    def __init__(self, nome=None, idade=35):
-        self.idade = idade
+    def __init__(self, *filhos, nome=None, idade=35):
         self.nome = nome
+        self.idade = idade
+        self.filhos = list(filhos)
+
     def cumprimentar(self):
-        return f'Olá {id(self)}'
+        return 'Olá'
 
 if __name__ == '__main__':
-    p = Pessoa('raquel')
-    print(Pessoa.cumprimentar(p))
-    print(id(p))
-    print(p.cumprimentar())
-    print(p.nome)
-    p.nome = 'wallace'
-    print(p.nome)
-    print(p.idade)
+    dirce = Pessoa(nome='Dirce')
+    wallace = Pessoa(dirce,nome='Wallace')
+    print(Pessoa.cumprimentar(wallace))
+    print(id(wallace))
+    print(wallace.cumprimentar())
+    print(wallace.nome)
+    print(wallace.idade)
+    for filho in wallace.filhos:
+        print(filho.nome)
